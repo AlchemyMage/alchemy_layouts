@@ -2,45 +2,9 @@
 layout: base
 ---
 
-<head>
-  {% seo %}
-  <style>
-    .container {
-      display: flex;
-    }
-
-    .sidebar {
-      position: fixed;
-      width: 150px; /* Reduced from 200px */
-      padding: 1em;
-      overflow: auto;
-      height: 100vh;
-    }
-
-    .content {
-      margin-left: 200px; /* Reduced from 210px */
-    }
-
-    /* Reduced line height and spacing for ToC items */
-    .sidebar p {
-      margin: 0;
-      padding: 0;
-      line-height: 1.2em;
-    }
-  </style>
-</head>
-
+{% include sidebar.html%}
 
 <body>    
-  <main class="page-content" aria-label="Content">
-    <div class="sidebar" id="toc"></div>
-    <div class="content">
-      <section id="main_content">
-        {{ content }}
-      </section>
-    </div>
-  </main>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Fetch all the headers

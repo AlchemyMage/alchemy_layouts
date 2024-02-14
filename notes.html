@@ -37,7 +37,7 @@ layout: base
         parentDirectory = '../';
     } else {
         // Otherwise, remove the last segment of the URL and go up one directory
-        parentDirectory = href.substring(0, href.lastIndexOf('/')) + '/../';
+        parentDirectory = href.substring(0, href.lastIndexOf('/'));
       }
 
         // Prepare an empty string to build our ToC HTML

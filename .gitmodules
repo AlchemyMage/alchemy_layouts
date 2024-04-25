@@ -1,4 +1,4 @@
 [submodule "page"]
 	path = page
-	url = https://github.com/LatticeMage/jekyll_layouts.git
+	url = https://github.com/PosetMage/jekyll_layouts.git
 	branch = main

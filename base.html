@@ -4,16 +4,16 @@
   {%- include head.html -%}
 
   <body>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
     <header class="site-header">
 
       <div class="wrapper">
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
         {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-        <a class="site-title" rel="author" href="/"><img src="https://posetmage.com/Images/Icon/AlchemyMage.svg" Height="16" /> 鍊金Mage
-        </a>
-    
+        <a class="site-title" rel="author" href="/"><img src="https://posetmage.com/Images/Icon/AlchemyMage.svg" Height="16" /> 鍊金Mage</a>
           <nav class="site-nav">
             <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger">
@@ -24,7 +24,7 @@
               </span>
             </label>
     
-            <div class="trigger"></div>
+            <div inject-root="trigger"></div>
           </nav>
       </div>
 
@@ -43,39 +43,14 @@
     <main class="page-content" aria-label="Content">
         {{ content }}
     </main>
+    
     {%- assign slogan = "何度でも立ち上がって技を叩き込め。 戦士ってのは最後まで立っていた奴が勝つんだ。" -%}
 
     {%- include footer.html -%}
 
-    <div>
-      <ul class="social-media-list">        
-          <a class="encode-email" data-email="Alchemy@posetmage.com" href="mailto">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="https://youtube.com/@AlchemyMage">                
-                  <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://facebook.com/AlchemyMage">                
-                  <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://twitter.com/AlchemyMage">                
-                  <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://line.me/ti/p/Out6J_7uOq">                
-                  <i class="fab fa-line"></i>
-          </a>
-          <a href="https://t.me/posetmage">                
-                  <i class="fab fa-telegram"></i>
-          </a>
-          <a href="https://twitch.tv/posetmage">                
-                  <i class="fab fa-twitch"></i>
-          </a>
-      </ul>
-    </div>
-
     <script src="https://posetmage.com/cdn/js/EmailEncoder.js"></script>
     <script src="https://posetmage.com/cdn/js/SearchSite.js"></script>
-    <script src="https://posetmage.com/cdn/js/PageTrigger.js"></script>
+    <script src="https://posetmage.com/cdn/js/InjectRootHtml.js"></script>
 
   </body>
 

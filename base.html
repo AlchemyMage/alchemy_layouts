@@ -45,15 +45,50 @@
         {{ content }}
     </main>
     
-    {%- assign slogan = "何度でも立ち上がって技を叩き込め。 戦士ってのは最後まで立っていた奴が勝つんだ。" -%}
+    <footer class="site-footer h-card">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
-    {%- include footer.html -%}
+      <div class="wrapper">
+        <div class="footer-col-wrapper">
+          <div class="footer-col">
+          {%- if site.author %}
+            <ul class="contact-list">
+              {% if site.author.name -%}
+                <li class="p-name">{{ site.author.name | escape }}</li>
+              {% endif -%}
+              {% if site.author.email -%}
+                <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+              {%- endif %}
+            </ul>
+          {%- endif %}
+          </div>
+          <div class="footer-col">
+            <input type="text" id="searchQuery" placeholder="Enter search keywords" />
+            <button onclick="SearchSite()">Search with Google</button>
+          </div>
+        </div>
+
+        <div class="social-media-list" inject-root="social-media-list"></div>
+        <style>
+            /* Adjust the font size for larger icons */
+            .social-media-list i {
+                font-size: 32px; /* You can adjust the value as needed */
+            }
+
+            a + a {
+                margin-left: 32px; /* You can adjust the value as needed */
+            }
+        </style>
+
+      </div>
+    </footer>
 
     <script src="https://posetmage.com/cdn/js/EmailEncoder.js"></script>
     <script src="https://posetmage.com/cdn/js/SearchSite.js"></script>
     <script src="https://posetmage.com/cdn/js/InjectRootHtml.js"></script>
     <script src="https://posetmage.com/cdn/js/jekyll/injectNavigation.js"></script>
-    <script src="https://posetmage.com/cdn/js/jekyll/injectTitle.js"></script>
+    <script src="https://posetmage.com/cdn/js/jekyll/injectTitleSlogan.js"></script>
 
   </body>
 
